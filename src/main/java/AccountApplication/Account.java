@@ -6,7 +6,7 @@ public class Account {
 	private String lastName;
 	private int accountNumber;
 
-	Account(String firstName, String lastName, int accountNumber){
+	public Account(String firstName, String lastName, int accountNumber){
 		
 		this.firstName = firstName;
 		this.lastName = lastName;
