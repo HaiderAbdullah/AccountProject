@@ -11,19 +11,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class Service {
+
+	int count = 0;
 	
-	
+	Map<Integer, Account> numberMapping = new HashMap<Integer, Account>();
 	
 	public void createAccount() {
 	
 	Account account = new Account("Abdullah", "Haider", 123);
 	System.out.println("");
 	
-	Map<String, Account> numberMapping = new HashMap<String, Account>();
 
-	
-
-	numberMapping.put("1", new Account(account.getFirstName(),account.getLastName(),account.getAccountNumber()));
+	numberMapping.put(1, new Account(account.getFirstName(),account.getLastName(),account.getAccountNumber()));
 
 	System.out.println(numberMapping.values());
 	
@@ -80,6 +79,34 @@ private Account createObject() {
 
 	return account;
 
+}
+
+public void add_user(Account name1) {
+	
+	this.numberMapping.put(count, name1);
+	count++;
+	
+}
+
+public int get_person(String name) {
+	
+		int counter = 0;
+		
+		for (Account check : numberMapping.values()) {
+			
+			if(check.getFirstName().equals(name)) {
+				
+				
+				counter++;
+				
+			}
+			
+			
+			
+		}
+		
+	return counter;
+	
 }
 
 }
