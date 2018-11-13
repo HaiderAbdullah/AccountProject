@@ -109,6 +109,12 @@ public int get_person(String name) {
 	
 }
 
+public int countNameByStream(String FName) {
+	
+	return (int) numberMapping.values().stream().filter(account -> account.getFirstName().equals(FName)).count();
+	
+}
+
 }
 
 
